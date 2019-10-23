@@ -11,9 +11,40 @@ public class Main {
 
 	public static void main(String[] args) 
 	{
+
 		Sterckets jeanjean = new Sterckets("Jean");
 		jeanjean.affiche();
-		System.out.println(jeanjean.description());
+
+		Sterckets patpat = new Sterckets("Patrick");
+		patpat.affiche();
+
+		//premier tour attaque
+		jeanjean.attaque(patpat);
+
+		jeanjean.affiche();
+		patpat.affiche();
+		if (getPV(patpat) == 0)
+		{
+			return win();
+		}
+		if (getPV(jeanjean) == 0)
+		{
+			return loose();
+		}
+
+		//deuxieme tour attaque
+		jeanjean.attaque(patpat);
+
+		jeanjean.affiche();
+		patpat.affiche();
+
+		//troisieme tour attaque
+		jeanjean.attaque(patpat);
+
+		jeanjean.affiche();
+		patpat.affiche();
+
+		//System.out.println(jeanjean.description());
 	}
 		
 		
